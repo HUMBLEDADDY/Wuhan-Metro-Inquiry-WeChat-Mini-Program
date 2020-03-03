@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/subway/subway",
+    "pages/station/station",
+    "pages/way/way",
+    "pages/feedback/feedback"
+  ],
+  "sitemapLocation": "sitemap79.json"
+}

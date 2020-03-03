@@ -1,0 +1,20 @@
+<view class="mainUI">
+  <view class="choice">
+    <view class="thesubway">
+      <view class="thesubway-icon" bindtap="searchsubway"></view>
+      <label>查询线路</label>
+    </view>
+    <view class="thestation">
+      <view class="thestation-icon" bindtap="searchstation"></view>
+      <label>查询站点</label>
+    </view>
+    <view class="theway">
+      <view class="theway-icon" bindtap="searchway"></view>
+      <label>查询路线</label>
+    </view>
+    <view class="feedback">
+      <view class="feedback-icon" bindtap="feedback"></view>
+      <label>您的意见对我很重要</label>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<view class="head">查询站点</view>
+<view class="search">
+  <input type="txt" placeholder="请输入您要查询的站点" bindinput="stationname"></input>
+  <button bindtap="searchStation" data-index="{{index}}"></button>
+</view>
+<view class="resault"  wx:for="{{stationsubway}}" wx:key=""  style="height:{{resault_height}}"> 
+    {{item.name}}
+</view>

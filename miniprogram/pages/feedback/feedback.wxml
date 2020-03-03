@@ -1,0 +1,5 @@
+<!--pages/feedback/feedback.wxml-->
+
+<button class="thebutton" open-type='feedback'>意见反馈</button>
+
+<view class="thewords"><text class="nomail">您可以点击上方的按钮反馈意见\n也可以直接发送邮件到\n</text><text class="themail">chen7157783@gmail.com</text></view>

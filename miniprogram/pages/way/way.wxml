@@ -1,0 +1,12 @@
+<!--pages/way/way.wxml-->
+<view class="head">查询路线</view>
+<view class="search">
+  <view>
+    <input type="txt" placeholder="请输入起点" class="start" bindinput="waystart"></input>
+    <input type="txt" placeholder="请输入终点" class="end" bindinput="wayend"></input>
+  </view>
+  <button bindtap="searchway"></button>
+</view>
+<view class="resault"  wx:for="{{myway}}" wx:key="" > 
+    {{item.name}}
+</view>
