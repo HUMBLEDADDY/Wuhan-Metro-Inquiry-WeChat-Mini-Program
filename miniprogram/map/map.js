@@ -508,29 +508,6 @@ var subway_num = 20;
 var station_num = 200;
 var route_num = 436;
 
-var Queue = function () {
-  var items = [];
-  //入队
-  this.enqueue = function (el) {
-    items.push(el)
-  }
-  //出队
-  this.dequeue = function () {
-    return items.shift();
-  }
-  // 队头
-  this.front = function () {
-    return items[0]
-  }
-  //队是否为空
-  this.isEmpty = function () {
-    return items.length === 0;
-  }
-  //队的长度
-  this.size = function () {
-    return items.length;
-  }
-}
 var Stations = function(name) {
   this.name = name;
 }
@@ -589,6 +566,7 @@ var findsubway = function (a){
     if(SUBWAYS[i][0]==a)
       return i;
   }
+  return -1;
 }
 
 var findstation = function (a) {
@@ -596,6 +574,7 @@ var findstation = function (a) {
     if (STATIONS[i] == a)
       return i;
   }
+  return -1;
 }
 
 var findsubwaystart = function (a) {
