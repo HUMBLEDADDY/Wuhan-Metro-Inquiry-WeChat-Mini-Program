@@ -55,3 +55,11 @@
   right: 10px;
   position: absolute;
 }
+
+.title{
+  margin-top: 5px;
+}
+.title text{
+  font-weight: 1000;
+  color: rgb(0,178,106);
+}

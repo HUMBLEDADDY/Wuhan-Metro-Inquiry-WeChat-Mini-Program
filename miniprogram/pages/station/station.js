@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    display: 'none',
+    thisstationname: '',
     stationname: '',
     stationsubway: '',
   },
@@ -16,46 +18,42 @@ Page({
 
   searchStation: function () {
     var map = require('../../map/map.js');
-    var g = new map.SubwayMap();
-    console.log(g.getstation(0).name);
-    var stationnum = map.findstation(this.data.stationname);
-    console.log(this.data.stationname);
-    if(stationnum==-1){
+    var g = new map.SubwayMap();//获得当前线路图
+    var stationnum = map.findstation(this.data.stationname);//获得查询线路的id
+    if(stationnum==-1){//判断查询的站点是否存在,不存在则提示用户"查无此站"
       wx.showModal({
         title: '提示',
         content: '查无此站！',
       })
     }
-    else{
-      var stationsubways = new Array();
+    else{//查询的站点存在,正式查询
+      var stationsubways = new Array();//用于存放经过查询站点的地铁
       var count = 0;
-      var subways = new Array(20);
-      for (var i = 0; i < 20; i++) {
+      var subways = new Array(10);//判断地铁是否经过查询的站点
+      for (var i = 0; i < 10; i++) {
         subways[i] = 0;
-      }
-      for (var i = 0; i < 436; i++) {
+      }//初始化
+      for (var i = 0; i < 218; i++) {
         if (g.getroute(i).start == stationnum || g.getroute(i).end == stationnum)
           subways[g.getroute(i).subway] = 1;
-      }
-      for (var i = 0; i < 20; i++) {
-        if (i % 2 == 1) {
-          subways[i] = 0;
-        }
-        if (subways[i] == 1) {
+      }//遍历线路图中的路径
+      for (var i = 0; i < 10; i++) {
+        if(subways[i]==1){
           stationsubways[count] = i;
           count++;
         }
-      }
+      }//subways转化为stationsubways
       console.log(subways)
       console.log(stationsubways)
       var Subways = new Array();
       for (var i = 0; i < stationsubways.length; i++) {
         Subways[i] = { name: g.getsubway(stationsubways[i]).name }
-      }
-      console.log(Subways)
+      }//获得查询出的线路的名字
       this.setData({
         resault_height: 20 + 'px',
         stationsubway: Subways,
+        thisstationname: this.data.stationname,
+        display: 'block',
       })
     }
   }

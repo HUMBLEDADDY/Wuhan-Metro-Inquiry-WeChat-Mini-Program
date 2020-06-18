@@ -3,6 +3,9 @@
   <input type="txt" placeholder="请输入您要查询的线路,如：一号线" bindinput="subwayname"></input>
   <button bindtap="searchSubway" data-index="{{index}}"></button>
 </view>
+<view class="title" style="display:{{display}}">
+  <text>{{thissubwayname}}经过的站点有：</text>
+</view>
 <view class="resault"  wx:for="{{subwaystation}}" wx:key="" style="height:{{resault_height}}"> 
     {{item.name}}
     <text>{{item.subwayname}}</text>

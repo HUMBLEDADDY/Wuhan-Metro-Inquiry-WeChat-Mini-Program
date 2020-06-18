@@ -1,4 +1,5 @@
 <view class="mainUI">
+  <view class="logo"></view>
   <view class="choice">
     <view class="thesubway">
       <view class="thesubway-icon" bindtap="searchsubway"></view>

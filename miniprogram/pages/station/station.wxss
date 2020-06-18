@@ -49,3 +49,11 @@
   margin-bottom: 10px;
   text-align:center;
 }
+
+.title{
+  margin-top: 5px;
+}
+.title text{
+  font-weight: 1000;
+  color: rgb(0,178,106);
+}

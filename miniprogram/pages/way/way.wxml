@@ -7,7 +7,24 @@
   </view>
   <button bindtap="searchway"></button>
 </view>
+<view class="title" style="display:{{display}}">
+  <text>推荐路径</text>
+</view>
 <view class="resault"  wx:for="{{myway}}" wx:key="" > 
+    {{item.name}}
+    <text>{{item.subwayname}}</text>
+</view>
+<view class="title" style="display:{{display}}">
+  <text>换乘最少</text>
+</view>
+<view class="resault1"  wx:for="{{myway1}}" wx:key="" > 
+    {{item.name}}
+    <text>{{item.subwayname}}</text>
+</view>
+<view class="title" style="display:{{display}}">
+  <text>乘车时间少</text>
+</view>
+<view class="resault2"  wx:for="{{myway2}}" wx:key="" > 
     {{item.name}}
     <text>{{item.subwayname}}</text>
 </view>
